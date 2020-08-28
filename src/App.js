@@ -1,22 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import logo from './logo.svg';
 import './App.css';
-import MyAccount from './components/MyAccount';
-import Home from './components/Home';
+import CustomRouter from './components/CustomRouter';
+import CustomAppBar from './components/CustomAppBar';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
-          <Route exact path={["/", "/home"]} component={Home} />
-          <Route path="/myAccount" component={MyAccount} />
-        </Switch>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+        <CustomAppBar />
+        <div className="main-container">
+          <CustomRouter />
+        </div>
       </div>
     </Router>
   );
